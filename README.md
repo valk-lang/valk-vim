@@ -1,9 +1,17 @@
 
 # Valk.vim
 
+## Install
+
+Install using [Plug](https://github.com/junegunn/vim-plug)
+
+```
+Plug 'valk-lang/valk-vim'
+```
+
 ## LSP setup
 
-Install `vim-lsp` using `Plug`
+Install [vim-lsp](https://github.com/prabirshrestha/vim-lsp) using `Plug`
 
 ```
 Plug 'prabirshrestha/vim-lsp'
@@ -12,6 +20,8 @@ Plug 'prabirshrestha/vim-lsp'
 Then add this to your `.vimrc`
 
 ```
+au BufNewFile,BufRead *.valk setlocal ft=valk
+
 if executable('valk')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'valk-lsp',
@@ -19,10 +29,4 @@ if executable('valk')
         \ 'whitelist': ['valk'],
         \ })
 endif
-```
-
-## Assosiate .valk
-
-```
-au BufNewFile,BufRead *.valk setlocal ft=valk
 ```
