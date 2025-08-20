@@ -20,9 +20,6 @@ Plug 'prabirshrestha/vim-lsp'
 Then add this to your `.vimrc`
 
 ```
-au BufNewFile,BufRead *.valk setlocal ft=valk
-au BufNewFile,BufRead *.valk.h setlocal ft=valk
-
 if executable('valk')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'valk-lsp',
